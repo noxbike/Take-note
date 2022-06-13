@@ -1,28 +1,23 @@
-#card-note{
-    margin-top: 40px;
-    width: 30%;
-    background-color: rgba(127, 214, 255, 0.87);
-    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.144);
-    #header-card-note{
-        text-align: right;
+#listing-note{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2%;
+    #container-card-note{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 280px;
+        margin-bottom: 20px;
+        width: 30%;
+    }
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    #create{
         width: 100%;
-        height: 20px;
-        background-color: rgb(93, 185, 255);
-        a{
-            margin: 10px;
-        }
-    }
-    #title-card-note{
-        text-align: center;
-    }
-    #description-card-note{
-        text-align: center;
-    }
-    #footer-card-note{
-        height: 20px;
-        text-align: right;
-        p{
-            margin: 10px;
-        }
     }
 }
