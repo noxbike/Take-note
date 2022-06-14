@@ -7,6 +7,7 @@ import { ListNoteComponent } from './list-note/list-note.component';
 import { HeaderComponent } from './header/header.component';
 import { NotesComponent } from './notes/notes.component';
 import { CreateNoteComponent } from './create-note/create-note.component';
+import { EditNoteComponent } from './edit-note/edit-note.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CreateNoteComponent } from './create-note/create-note.component';
     ListNoteComponent,
     HeaderComponent,
     NotesComponent,
-    CreateNoteComponent
+    CreateNoteComponent,
+    EditNoteComponent
   ],
   imports: [
     BrowserModule,
