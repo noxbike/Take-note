@@ -3,7 +3,10 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 2%;
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
     #container-card-note{
         display: flex;
         justify-content: center;
@@ -11,13 +14,5 @@
         min-width: 280px;
         margin-bottom: 20px;
         width: 30%;
-    }
-}
-
-#container{
-    display: flex;
-    flex-direction: row;
-    #create{
-        width: 100%;
     }
 }
