@@ -1,0 +1,24 @@
+#reader{
+    background-color: rgb(54, 54, 54);
+    color:white;
+    display: none;
+    flex-direction: column;
+    padding: 5px;
+    width: 350px;
+    position: absolute;
+    margin-right: 40px;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0 0 20px 10px rgba(128, 128, 128, 0.226);
+    border-left: 2px solid rgba(141, 140, 140, 0.253);
+    header{
+        margin: 0px;
+        padding: 0px;
+        text-align: right;
+        font-size: 15px;
+        color: rgb(145, 145, 145);
+    }
+    h1{
+        margin: 0;
+    }
+}
