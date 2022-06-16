@@ -11,7 +11,7 @@ export class ListNoteComponent implements OnInit {
 
   constructor(
     private takeNoteService: TakeNoteService
-  ) { }
+  ) {}
 
   listOfNotes!: TakeNot[];
 

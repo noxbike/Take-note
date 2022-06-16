@@ -1,0 +1,10 @@
+-inegrez montrez toutes une seul note entière
+quand on clique dessus
+
+-integrez les parmètres de create avec observable
+
+-integrez les paramètrese de update avec observable
+
+-design
+
+-organisation de fichier

@@ -1,20 +1,15 @@
-<div id="view-form-update">
-    <div id="form-update">
+<div class="viewFormUpdate">
+    <form [formGroup]="noteForm" id="form-update">
+        <header><button class="closeButton" (click)="close()">x</button></header>
         <h1>Update post-it</h1>
         <div id="row">
-            <input placeholder="Title" name="title" type="text">
+            <input placeholder="Title" formControlName="title" type="text">
         </div>
         <div id="row">
-            <textarea placeholder="Description" name="description" id="description-fields" cols="30" rows="5"></textarea>
-        </div>
-        <div id="row">
-            <textarea placeholder="Feedback" name="feedback" id="feedback" cols="30" rows="5"></textarea>
-        </div>
-        <div id="row">
-            <input type="date" name="deadline">
+            <textarea placeholder="Description" formControlName="description" id="description-fields" cols="30" rows="5"></textarea>
         </div>
         <div>
-            <button>Update</button>
+            <button class="updateButton" (click)="onUpdate()">Update</button>
         </div>
-    </div>
+    </form>
 </div>

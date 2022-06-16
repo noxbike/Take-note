@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListNoteComponent } from './list-note/list-note.component';
+import { EditNoteComponent } from './edit-note/edit-note.component';
+import { SingleNoteComponent } from './single-note/single-note.component';
 
 const routes: Routes = [
-  {path: '', component: ListNoteComponent},
+  {path: 'update/:id', component:EditNoteComponent},
+  {path: ':id', component: SingleNoteComponent}
 ];
 
 @NgModule({

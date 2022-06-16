@@ -1,13 +1,20 @@
-#view-form-update{
+.viewFormUpdate{
     width: 100%;
     height: 100vh;
     margin: 0;
     position: absolute;
     top: 0;
+    left:0;
     background-color: rgba(0, 0, 0, 0.425);
-    display:none;
+    display:flex;
     align-items: center;
     justify-content: center;
+    header, button{
+        cursor: pointer;
+        text-align: right;
+        font-weight: 700;
+        font-size: 15px;
+    }
     #form-update{
         text-align: center;
         margin: 0;
@@ -24,7 +31,7 @@
         width:90%;
         margin-bottom: 10px;
        }
-       button{
+       .updateButton{
         font-size: 20px;
         border:none;
         background-color: rgb(51, 51, 51);
@@ -36,3 +43,4 @@
 
     }
 }
+

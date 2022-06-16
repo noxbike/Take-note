@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TakeNot } from '../model/note.model';
 
 @Component({
@@ -9,9 +10,19 @@ import { TakeNot } from '../model/note.model';
 export class NotesComponent implements OnInit {
 
   @Input() note!:TakeNot;
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onView(noteId: number){
+    this.router.navigateByUrl(`/${noteId}`)
+  }
+
+  updateForm(noteId: number){
+    this.router.navigateByUrl(`update/${noteId}`)
   }
 
 }

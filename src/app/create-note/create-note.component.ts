@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { TakeNoteService } from '../service/take-note.service';
 
 @Component({
   selector: 'app-create-note',
@@ -7,9 +9,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateNoteComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private takeNoteService: TakeNoteService,
+    private formBuilder: FormBuilder,
+  ) { }
+
+  noteForm!: FormGroup;
+  showForm!: boolean;
 
   ngOnInit(): void {
+    this.noteForm = this.formBuilder.group({
+      title: [null],
+      description: [null],
+    })
+    this.showForm = false;
+  }
+
+  onCreate(){
+    this.showForm = true;
+  }
+
+  onSubmitForm(){
+    this.takeNoteService.createNote(this.noteForm.value)
+    this.noteForm = this.formBuilder.group({
+      title: [null],
+      description: [null],
+    })
+    this.showForm = false;
+  }
+
+  close(){
+    this.noteForm = this.formBuilder.group({
+      title: [null],
+      description: [null],
+    })
+    this.showForm = false;
   }
 
 }

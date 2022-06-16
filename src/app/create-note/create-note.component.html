@@ -1,20 +1,18 @@
-<div id="view-form-create">
-    <div id="form-create">
+<div (click)="onCreate()" [ngClass]="{displayNone: showForm === true, buttonCreate: showForm === false}">
+    <button>+</button>
+</div>
+<div [ngClass]="{viewFormCreate: showForm === true, displayNone: showForm === false}">
+    <div [formGroup]="noteForm" id="form-create">
+        <header><button id="closeButton"  (click)="close()">x</button></header>
         <h1>Create post-it</h1>
-        <div id="row">
-            <input placeholder="Title" name="title" type="text">
+        <div id="form-group">
+            <input placeholder="Title" formControlName="title" type="text">
         </div>
-        <div id="row">
-            <textarea placeholder="Description" name="description" id="description-fields" cols="30" rows="5"></textarea>
+        <div id="form-group">
+            <textarea placeholder="Description" formControlName="description" id="description-fields" cols="30" rows="5"></textarea>
         </div>
-        <div id="row">
-            <textarea placeholder="Feedback" name="feedback" id="feedback" cols="30" rows="5"></textarea>
-        </div>
-        <div id="row">
-            <input type="date" name="deadline">
-        </div>
-        <div>
-            <button>Create</button>
+        <div id="action-button">
+            <button id="createButton" type="submit" (click)="onSubmitForm()">Create</button>
         </div>
     </div>
 </div>

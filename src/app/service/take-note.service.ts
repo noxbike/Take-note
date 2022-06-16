@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { map, Observable, pipe } from 'rxjs';
 import { TakeNot } from '../model/note.model';
 
 @Injectable({
@@ -7,6 +8,7 @@ import { TakeNot } from '../model/note.model';
 export class TakeNoteService {
 
   constructor() { }
+  singleNote!:any;
 
   listNote: TakeNot[] = [
     {
@@ -35,7 +37,23 @@ export class TakeNoteService {
     }
   ]
 
-  getAllNote(){
+  createNote(formValue: {title: string, description: string}){
+    this.listNote.push({...formValue, id:this.listNote.length + 1, createdDate: new Date()});
+  }
+
+  getNoteById(singleNoteId: number) {
+    const note = this.listNote.find(note => note.id === singleNoteId);
+    if(!note)
+      throw new Error('note not found');
+    else
+      return note;
+  }
+
+  getAllNote() {
     return this.listNote
+  }
+
+  updateSingleNote(formValue: {id: number, title: string, description: string, createdDate: Date}) {
+    this.listNote[formValue.id - 1] = { ...formValue } ;
   }
 }
