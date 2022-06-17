@@ -10,6 +10,11 @@ import { CreateNoteComponent } from './create-note/create-note.component';
 import { EditNoteComponent } from './edit-note/edit-note.component';
 import { SingleNoteComponent } from './single-note/single-note.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RoundMiniFabComponent } from './round-mini-fab/round-mini-fab.component';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MaterialExampleModule} from '../material.module';
+import { IconButtonComponent } from './icon-button/icon-button.component';
 
 @NgModule({
   declarations: [
@@ -19,15 +24,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NotesComponent,
     CreateNoteComponent,
     EditNoteComponent,
-    SingleNoteComponent
+    SingleNoteComponent,
+    RoundMiniFabComponent,
+    IconButtonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    MaterialExampleModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

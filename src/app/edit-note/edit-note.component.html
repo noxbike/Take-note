@@ -1,12 +1,21 @@
+<div id="screenBlack"  (click)="close()"></div>
 <div class="viewFormUpdate">
     <form [formGroup]="noteForm" id="form-update">
-        <header><button class="closeButton" (click)="close()">x</button></header>
+        <header>
+            <app-icon-button  (click)="close()" text="close"></app-icon-button>
+        </header>
         <h1>Update post-it</h1>
         <div id="row">
-            <input placeholder="Title" formControlName="title" type="text">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Title" formControlName="title" type="text">
+          </mat-form-field>
         </div>
         <div id="row">
-            <textarea placeholder="Description" formControlName="description" id="description-fields" cols="30" rows="5"></textarea>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Description" formControlName="description" id="description-fields" cols="30" rows="5"></textarea>
+          </mat-form-field>
         </div>
         <div>
             <button class="updateButton" (click)="onUpdate()">Update</button>

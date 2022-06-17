@@ -28,6 +28,7 @@ export class EditNoteComponent implements OnInit {
       id: [this.note.id],
       title:[this.note.title],
       description: [this.note.description],
+      priority: [this.note.priority],
       createdDate: [this.note.createdDate]
     })
   }

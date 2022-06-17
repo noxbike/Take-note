@@ -1,15 +1,34 @@
 <div (click)="onCreate()" [ngClass]="{displayNone: showForm === true, buttonCreate: showForm === false}">
-    <button>+</button>
+    <app-round-mini-fab color="white" text="add"></app-round-mini-fab>
 </div>
+<div id="screenBlack" [ngClass]="{displayNone: showForm === false}"  (click)="close()"></div>
 <div [ngClass]="{viewFormCreate: showForm === true, displayNone: showForm === false}">
     <div [formGroup]="noteForm" id="form-create">
-        <header><button id="closeButton"  (click)="close()">x</button></header>
+        <header>
+            <app-icon-button (click)="close()" text="close"></app-icon-button>
+        </header>
         <h1>Create post-it</h1>
         <div id="form-group">
-            <input placeholder="Title" formControlName="title" type="text">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="Title"  formControlName="title" type="text">
+            </mat-form-field>
         </div>
         <div id="form-group">
-            <textarea placeholder="Description" formControlName="description" id="description-fields" cols="30" rows="5"></textarea>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput placeholder="Description" formControlName="description" id="description-fields" cols="30" rows="5"></textarea>
+            </mat-form-field>
+        </div>
+        <div id="form-group">
+            <mat-form-field appearance="fill">
+                <mat-label>priority</mat-label>
+                <mat-select formControlName="priority" id='priority'>
+                    <mat-option value="255,0,0">Hight</mat-option>
+                    <mat-option value="0,128,0">Medium</mat-option>
+                    <mat-option value="0,0,255">Low</mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
         <div id="action-button">
             <button id="createButton" type="submit" (click)="onSubmitForm()">Create</button>

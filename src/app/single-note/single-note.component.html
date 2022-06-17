@@ -1,6 +1,9 @@
+<div id="screen"  (click)="close()"></div>
 <div id="reader">
-    <header><span (click)="close()">x</span></header>
+    <header>
+        <app-icon-button (click)="close()" text="close"></app-icon-button>
+    </header>
     <h1>{{note.title}}</h1>
-    <p>{{note.createdDate}}</p>
+    <p>{{note.createdDate | date:'medium'}}</p>
     <p>{{note.description}}</p>
 </div>

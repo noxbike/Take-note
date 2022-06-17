@@ -21,6 +21,7 @@ export class CreateNoteComponent implements OnInit {
     this.noteForm = this.formBuilder.group({
       title: [null],
       description: [null],
+      priority: [null]
     })
     this.showForm = false;
   }
@@ -31,9 +32,11 @@ export class CreateNoteComponent implements OnInit {
 
   onSubmitForm(){
     this.takeNoteService.createNote(this.noteForm.value)
+    console.log(this.noteForm.value)
     this.noteForm = this.formBuilder.group({
       title: [null],
       description: [null],
+      priority: [null],
     })
     this.showForm = false;
   }
@@ -42,6 +45,7 @@ export class CreateNoteComponent implements OnInit {
     this.noteForm = this.formBuilder.group({
       title: [null],
       description: [null],
+      priority: [null],
     })
     this.showForm = false;
   }

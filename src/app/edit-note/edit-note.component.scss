@@ -1,16 +1,19 @@
-.viewFormUpdate{
+#screenBlack{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.425);
     width: 100%;
     height: 100vh;
-    margin: 0;
-    position: absolute;
     top: 0;
-    left:0;
-    background-color: rgba(0, 0, 0, 0.425);
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    header, button{
-        cursor: pointer;
+}
+.viewFormUpdate{
+    max-width: 350px;
+    width:30%;
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left:50%;
+    transform: translate(-50%, 0);
+    header{
         text-align: right;
         font-weight: 700;
         font-size: 15px;
@@ -21,17 +24,17 @@
         display: flex;
         flex-direction: column;
         background-color: white;
-        width:30%;
-        div{
+        width:100%;
+        .mat-form-field{
             width: 100%;
+        }
+        #row{
+            width: 90%;
             margin-right: auto;
             margin-left: auto;
         }
-        input, textarea{
-        width:90%;
-        margin-bottom: 10px;
-       }
        .updateButton{
+        cursor: pointer;
         font-size: 20px;
         border:none;
         background-color: rgb(51, 51, 51);

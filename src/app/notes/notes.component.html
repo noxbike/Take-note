@@ -1,12 +1,13 @@
-<div id="card-note">
-    <div id="header-card-note">
-        <button (click)="updateForm(note.id)">modify</button>
+<div style="background-color: rgba({{note.priority}},0.400)" id="card-note">
+    <div id="header-card-note" style="background-color: rgba({{note.priority}},0.600)">
+        <div (click)="updateForm(note.id)">
+            <app-icon-button text="edit"></app-icon-button>
+        </div>
     </div>
     <div (click)="onView(note.id)">
-        <h3 id="title-card-note">{{note.title}}</h3>
-        <p id="description-card-note">{{note.description}}</p>
+        <h2 id="title-card-note">{{note.title}}</h2>
         <div id="footer-card-note">
-            <p id="date-footer-card-note"><strong>{{note.createdDate}}</strong></p>
+            <p id="date-footer-card-note"><strong>{{note.createdDate | date }}</strong></p>
         </div>
     </div>
 </div>

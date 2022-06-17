@@ -13,31 +13,35 @@ export class TakeNoteService {
   listNote: TakeNot[] = [
     {
       id: 1,
-      title: 'Make Take Note App',
+      title: 'Give a paper to the administration',
       description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit...',
-      createdDate: new Date('21/05/2022'),
+      createdDate: new Date(),
+      priority: '255, 0, 0',
     },
     {
       id: 2,
-      title: 'Make My Portfolio',
+      title: 'Learn Javascript ',
       description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elitdsdd...',
-      createdDate: new Date('21/05/2022'),
+      createdDate: new Date(),
+      priority: '0, 128, 0',
     },
     {
       id: 3,
-      title: 'Learn Angular',
+      title: 'Make a project with HTML, CSS and Javascript',
       description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit...',
-      createdDate: new Date('21/05/2022'),
+      createdDate: new Date(),
+      priority: '255, 0, 0',
     },
     {
       id: 4,
-      title: 'Post on Instagram',
+      title: 'Appointment with the doctor tomorrow',
       description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit..',
-      createdDate: new Date('21/05/2022'),
+      createdDate: new Date(),
+      priority: '0, 0, 255',
     }
   ]
 
-  createNote(formValue: {title: string, description: string}){
+  createNote(formValue: {title: string, description: string, priority: string}){
     this.listNote.push({...formValue, id:this.listNote.length + 1, createdDate: new Date()});
   }
 
@@ -53,7 +57,7 @@ export class TakeNoteService {
     return this.listNote
   }
 
-  updateSingleNote(formValue: {id: number, title: string, description: string, createdDate: Date}) {
+  updateSingleNote(formValue: {id: number, title: string, description: string, createdDate: Date, priority: string}) {
     this.listNote[formValue.id - 1] = { ...formValue } ;
   }
 }
